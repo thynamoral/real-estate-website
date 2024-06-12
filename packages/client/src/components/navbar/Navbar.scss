@@ -1,0 +1,42 @@
+nav {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  a {
+    transition: all 0.2s ease-in-out;
+    &:hover {
+      scale: 1.05;
+    }
+  }
+
+  .left {
+    flex: 6;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+
+    #logo {
+      font-weight: bold;
+      font-size: 20px;
+    }
+  }
+  .right {
+    flex: 4;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background-color: #fcf5f3;
+    height: 100%;
+
+    a {
+      padding: 12px 24px;
+      margin: 20px;
+    }
+
+    #signUp {
+      background-color: #fece51;
+    }
+  }
+}
