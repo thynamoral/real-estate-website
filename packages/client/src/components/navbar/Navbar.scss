@@ -1,3 +1,5 @@
+@import "../../sass/responsive.scss";
+
 nav {
   height: 100px;
   display: flex;
@@ -15,13 +17,23 @@ nav {
     flex: 6;
     display: flex;
     align-items: center;
-    gap: 50px;
+    gap: 40px;
 
     #logo {
       font-weight: bold;
       font-size: 20px;
     }
+
+    .navLinks {
+      display: flex;
+      gap: 40px;
+
+      @include sm {
+        display: none;
+      }
+    }
   }
+
   .right {
     flex: 4;
     display: flex;
@@ -29,14 +41,72 @@ nav {
     justify-content: flex-end;
     background-color: #fcf5f3;
     height: 100%;
+    gap: 20px;
+    padding: 0px 20px;
 
-    a {
-      padding: 12px 24px;
-      margin: 20px;
+    @include md {
+      padding: 0;
+      background-color: transparent;
+    }
+
+    #signIn {
+      display: block;
+      @include sm {
+        display: none;
+      }
     }
 
     #signUp {
+      display: block;
+      padding: 12px 24px;
       background-color: #fece51;
+
+      @include sm {
+        display: none;
+      }
+    }
+
+    #menuIconContainer {
+      display: none;
+      width: 35px;
+      height: 35px;
+      background-color: #000;
+      border-radius: 50%;
+      z-index: 999;
+      @include sm {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #menuIcon {
+        color: #fff;
+        width: 25px;
+        height: 25px;
+      }
+    }
+
+    .menuList {
+      position: absolute;
+      top: 0;
+      right: -50%;
+      width: 50%;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: #000;
+      color: #fff;
+      transition: all 0.4s ease;
+      @include sm {
+        width: 100%;
+        right: -100%;
+      }
+
+      &.showMenu {
+        right: 0;
+      }
     }
   }
 }
