@@ -2,6 +2,7 @@ import { Menu } from "lucide-react";
 import "./Navbar.scss";
 import useToggle from "@/hooks/useToggle";
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 const Navbar = () => {
   const { isToggle, setIsToggle } = useToggle();
 
@@ -23,23 +24,23 @@ const Navbar = () => {
   return (
     <nav>
       <div className="left">
-        <a id="logo" href="/">
+        <Link id="logo" to="/">
           MomoEstate
-        </a>
+        </Link>
         <div className="navLinks">
-          <a href="/">Home</a>
-          <a href="/">About</a>
-          <a href="/">Contact</a>
-          <a href="/">Agent</a>
+          <Link to="/">Home</Link>
+          <Link to="/">About</Link>
+          <Link to="/">Contact</Link>
+          <Link to="/">Agent</Link>
         </div>
       </div>
       <div className="right">
-        <a id="signIn" href="/">
+        <Link id="signIn" to="/">
           Sign in
-        </a>
-        <a id="signUp" href="/">
+        </Link>
+        <Link id="signUp" to="/">
           Sign up
-        </a>
+        </Link>
         {/* nav links menu for mobile/tablet */}
         {!isToggle && (
           <div id="menuIconContainer">
@@ -56,12 +57,12 @@ const Navbar = () => {
           <div id="menuIconContainer2">
             <Menu id="menuIcon" onClick={() => setIsToggle(true)} />
           </div>
-          <a href="/">Home</a>
-          <a href="/">About</a>
-          <a href="/">Contact</a>
-          <a href="/">Agent</a>
-          <a href="/">Sign in</a>
-          <a href="/">Sign up</a>
+          <Link to="/">Home</Link>
+          <Link to="/">About</Link>
+          <Link to="/">Contact</Link>
+          <Link to="/">Agent</Link>
+          <Link to="/">Sign in</Link>
+          <Link to="/">Sign up</Link>
         </div>
       </div>
     </nav>

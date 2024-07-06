@@ -14,7 +14,7 @@ const Pin = ({ item }: Props) => {
         <div className="popupContainer">
           <img src={item.img} alt={item.address} />
           <div className="textContainer">
-            <Link to={`${item.id}`}>{item.title}</Link>
+            <Link to={`/${item.id}`}>{item.title}</Link>
             <span>{item.bedroom} bedroom</span>
             <b>$ {item.price}</b>
           </div>
