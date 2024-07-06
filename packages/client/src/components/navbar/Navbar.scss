@@ -89,23 +89,27 @@ nav {
     .menuList {
       position: absolute;
       top: 0;
-      right: -50%;
+      right: 0;
       width: 50%;
       height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      gap: 30px;
+      opacity: 0;
       background-color: #000;
       color: #fff;
       transition: all 0.4s ease;
-      @include sm {
-        width: 100%;
-        right: -100%;
-      }
 
       &.showMenu {
-        right: 0;
+        opacity: 1;
+      }
+
+      #menuIconContainer2 {
+        position: absolute;
+        top: 35px;
+        right: 25px;
       }
     }
   }

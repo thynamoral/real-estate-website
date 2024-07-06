@@ -1,10 +1,24 @@
 import { Menu } from "lucide-react";
 import "./Navbar.scss";
 import useToggle from "@/hooks/useToggle";
+import { useEffect } from "react";
 const Navbar = () => {
   const { isToggle, setIsToggle } = useToggle();
 
-  console.log(isToggle);
+  // console.log(isToggle);
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const handleMousedown = (event: any) => {
+    if (!event.target.classList.contains("mobileNavbar")) {
+      setIsToggle(false);
+    }
+    // console.log(event.target.className);
+  };
+
+  useEffect(() => {
+    window.addEventListener("mousedown", handleMousedown);
+    return () => window.removeEventListener("mousedown", handleMousedown);
+  }, []);
 
   return (
     <nav>
@@ -27,10 +41,21 @@ const Navbar = () => {
           Sign up
         </a>
         {/* nav links menu for mobile/tablet */}
-        <div id="menuIconContainer">
-          <Menu id="menuIcon" onClick={() => setIsToggle((prev) => !prev)} />
-        </div>
-        <div className={`${isToggle ? "menuList showMenu" : "menuList"}`}>
+        {!isToggle && (
+          <div id="menuIconContainer">
+            <Menu id="menuIcon" onClick={() => setIsToggle(true)} />
+          </div>
+        )}
+        <div
+          className={`${
+            isToggle
+              ? "menuList mobileNavbar showMenu"
+              : "menuList mobileNavbar"
+          }`}
+        >
+          <div id="menuIconContainer2">
+            <Menu id="menuIcon" onClick={() => setIsToggle(true)} />
+          </div>
           <a href="/">Home</a>
           <a href="/">About</a>
           <a href="/">Contact</a>
