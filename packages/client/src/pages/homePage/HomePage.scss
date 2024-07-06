@@ -1,4 +1,5 @@
 .homePage {
+  height: 100%;
   display: flex;
 
   .textContainer {
@@ -40,6 +41,8 @@
 
   .imgContainer {
     flex: 2;
+    display: flex;
+    align-items: center;
     background-color: #fcf5f3;
     padding: 0 20px;
 
