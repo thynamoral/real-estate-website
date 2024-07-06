@@ -1,16 +1,8 @@
-import "./sass/layout.scss";
-import Navbar from "./components/navbar/Navbar";
-import HomePage from "./pages/homePage/HomePage";
+import { RouterProvider } from "react-router-dom";
+import router from "./routes";
 
 function App() {
-  return (
-    <div className="layout">
-      <Navbar />
-      <div className="content">
-        <HomePage />
-      </div>
-    </div>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;
