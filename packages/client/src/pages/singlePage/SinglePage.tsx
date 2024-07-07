@@ -1,7 +1,38 @@
 import "./SinglePage.scss";
+import Slider from "@/components/slider/Slider";
+import { singlePostData, userData } from "@/lib/mockData";
+import { MapPin } from "lucide-react";
 
 const SinglePage = () => {
-  return <div>SinglePage</div>;
+  return (
+    <div className="singlePage">
+      <div className="details">
+        <div className="wrapper">
+          <Slider images={singlePostData.images} />
+          <div className="info">
+            <div className="top">
+              <div className="post">
+                <h1>{singlePostData.title}</h1>
+                <div className="address">
+                  <MapPin className="icons" />
+                  {singlePostData.address}
+                </div>
+                <div className="price">$ {singlePostData.price}</div>
+              </div>
+              <div className="user">
+                <img src={userData.img} alt="profile-image" />
+                <span className="username">{userData.name}</span>
+              </div>
+            </div>
+            <div className="bottom">{singlePostData.description}</div>
+          </div>
+        </div>
+      </div>
+      <div className="features">
+        <div className="wrapper">s</div>
+      </div>
+    </div>
+  );
 };
 
 export default SinglePage;
