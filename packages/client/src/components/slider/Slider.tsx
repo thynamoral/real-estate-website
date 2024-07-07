@@ -1,6 +1,6 @@
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import "./Slider.scss";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 type Props = {
   images: string[];
@@ -33,6 +33,18 @@ const Slider = ({ images }: Props) => {
         : { ...prev, selectedImageIndex: prev.selectedImageIndex - 1 };
     });
   };
+
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        closeSlider();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
 
   return (
     <div className="slider">
