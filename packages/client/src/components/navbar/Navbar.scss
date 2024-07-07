@@ -5,6 +5,12 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding-top: 15px;
+
+  @include md {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
 
   a {
     transition: all 0.2s ease-in-out;
@@ -72,7 +78,7 @@ nav {
       height: 35px;
       background-color: #000;
       border-radius: 50%;
-      z-index: 999;
+      z-index: 10;
       @include sm {
         display: flex;
         justify-content: center;
@@ -92,7 +98,7 @@ nav {
       right: 0;
       width: 50%;
       height: 100vh;
-      display: flex;
+      display: none;
       flex-direction: column;
       justify-content: center;
       align-items: center;
@@ -101,6 +107,10 @@ nav {
       background-color: #000;
       color: #fff;
       transition: all 0.4s ease;
+
+      @include sm {
+        display: flex;
+      }
 
       &.showMenu {
         opacity: 1;

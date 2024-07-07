@@ -47,23 +47,25 @@ const Navbar = () => {
             <Menu id="menuIcon" onClick={() => setIsToggle(true)} />
           </div>
         )}
-        <div
-          className={`${
-            isToggle
-              ? "menuList mobileNavbar showMenu"
-              : "menuList mobileNavbar"
-          }`}
-        >
-          <div id="menuIconContainer2">
-            <Menu id="menuIcon" onClick={() => setIsToggle(true)} />
+        {isToggle && (
+          <div
+            className={`${
+              isToggle
+                ? "menuList mobileNavbar showMenu"
+                : "menuList mobileNavbar"
+            }`}
+          >
+            <div id="menuIconContainer2">
+              <Menu id="menuIcon" onClick={() => setIsToggle(true)} />
+            </div>
+            <Link to="/">Home</Link>
+            <Link to="/">About</Link>
+            <Link to="/">Contact</Link>
+            <Link to="/">Agent</Link>
+            <Link to="/">Sign in</Link>
+            <Link to="/">Sign up</Link>
           </div>
-          <Link to="/">Home</Link>
-          <Link to="/">About</Link>
-          <Link to="/">Contact</Link>
-          <Link to="/">Agent</Link>
-          <Link to="/">Sign in</Link>
-          <Link to="/">Sign up</Link>
-        </div>
+        )}
       </div>
     </nav>
   );

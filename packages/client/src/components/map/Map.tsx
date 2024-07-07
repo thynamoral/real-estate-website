@@ -3,11 +3,12 @@ import "./Map.scss";
 import "leaflet/dist/leaflet.css";
 import TCard from "@/entities/Card";
 import Pin from "../pin/Pin";
+import TSinglePost from "@/entities/SinglePost";
 
 const position = [51.505, -0.09];
 
 type Props = {
-  items: TCard[];
+  items: TCard[] | TSinglePost[];
 };
 
 const Map = ({ items }: Props) => {
