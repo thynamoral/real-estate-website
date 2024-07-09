@@ -14,6 +14,8 @@ type Props = {
 const Map = ({ items }: Props) => {
   return (
     <MapContainer
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-expect-error
       center={position}
       zoom={7}
       scrollWheelZoom={false}
@@ -21,6 +23,8 @@ const Map = ({ items }: Props) => {
     >
       <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
       {items.map((item) => (
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-expect-error
         <Pin key={item.id} item={item} />
       ))}
     </MapContainer>
