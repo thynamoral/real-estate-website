@@ -1,6 +1,7 @@
 import { Search } from "lucide-react";
 import "./SearchBar.scss";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const types = ["buy", "rent"];
 
@@ -11,6 +12,7 @@ const SearchBar = () => {
     minPrice: 0,
     maxPrice: 0,
   });
+  const navigate = useNavigate();
 
   const switchType = (type: string) => setQuery((prev) => ({ ...prev, type }));
 
@@ -43,7 +45,7 @@ const SearchBar = () => {
           max={1000000}
           placeholder="Max Price"
         />
-        <button>
+        <button onClick={() => navigate("/list")}>
           <Search id="searchBtn" />
         </button>
       </form>
