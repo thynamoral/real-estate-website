@@ -30,9 +30,9 @@ const Navbar = () => {
         </Link>
         <div className="navLinks">
           <Link to="/">Home</Link>
-          <Link to="/">About</Link>
-          <Link to="/">Contact</Link>
-          <Link to="/">Agent</Link>
+          <Link to="/list">Listings</Link>
+          {/* <Link to="/">Contact</Link>
+          <Link to="/">Agent</Link> */}
         </div>
       </div>
       <div className="right">
@@ -78,15 +78,15 @@ const Navbar = () => {
             <Link to="/" onClick={() => setIsToggle(false)}>
               Home
             </Link>
-            <Link to="/" onClick={() => setIsToggle(false)}>
-              About
+            <Link to="/list" onClick={() => setIsToggle(false)}>
+              Listings
             </Link>
-            <Link to="/" onClick={() => setIsToggle(false)}>
+            {/* <Link to="/" onClick={() => setIsToggle(false)}>
               Contact
             </Link>
             <Link to="/" onClick={() => setIsToggle(false)}>
               Agent
-            </Link>
+            </Link> */}
             <Link to="/" onClick={() => setIsToggle(false)}>
               Sign in
             </Link>
