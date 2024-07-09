@@ -1,6 +1,7 @@
 import CardList from "@/components/cardList/CardList";
 import "./ProfilePage.scss";
 import { userData } from "@/lib/mockData";
+import Chat from "@/components/chat/Chat";
 
 const ProfilePage = () => {
   return (
@@ -35,7 +36,9 @@ const ProfilePage = () => {
         </div>
       </div>
       <div className="chatContainer">
-        <div className="wrapper">{/* <Chat /> */}</div>
+        <div className="wrapper">
+          <Chat />
+        </div>
       </div>
     </div>
   );
