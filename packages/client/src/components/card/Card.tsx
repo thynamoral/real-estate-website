@@ -16,7 +16,7 @@ type Props = {
 const Card = ({ item }: Props) => {
   return (
     <div className="card">
-      <Link to={`${item.id}`} className="imgContainer">
+      <Link to={`/${item.id}`} className="imgContainer">
         <img src={item.img} alt={item.title} />
       </Link>
       <div className="textContainer">
